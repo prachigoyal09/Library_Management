@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Manager</title>
+    <style>
+        /* Basic CSS for styling */
+        body { font-family: sans-serif; margin: 20px; }
+        .list-item { border: 1px solid #ddd; padding: 10px; margin-bottom: 5px; }
+        .pagination button { padding: 8px 12px; margin: 5px; cursor: pointer; }
+        .filter-section { margin-bottom: 20px; }
+        .form-section { margin-bottom: 20px; }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <h1>Library Manager</h1>
+
+    <div class="form-section">
+        <h2>Add/Update Book</h2>
+        <input type="text" id="bookTitle" placeholder="Title">
+        <input type="text" id="bookAuthor" placeholder="Author">
+        <input type="text" id="bookGenre" placeholder="Genre">
+        <input type="checkbox" id="bookAvailability"> <label for="bookAvailability">Available</label>
+        <button id="addBook">Add/Update Book</button>
+    </div>
+
+    <div class="filter-section">
+        <h2>Filter Books</h2>
+        <input type="text" id="filterBookGenre" placeholder="Filter by Genre">
+        <input type="text" id="filterBookAuthor" placeholder="Filter by Author">
+        <button id="applyBookFilters">Apply Filters</button>
+    </div>
+
+    <div id="books"></div>
+    <div id="bookPagination"></div>
+
+    <div class="form-section">
+        <h2>Add/Update Member</h2>
+        <input type="text" id="memberName" placeholder="Name">
+        <input type="date" id="memberDate">
+        <input type="checkbox" id="memberActive"> <label for="memberActive">Active</label>
+        <button id="addMember">Add/Update Member</button>
+    </div>
+
+    <div class="filter-section">
+        <h2>Filter Members</h2>
+        <input type="checkbox" id="filterMemberActive"> <label for="filterMemberActive">Active Only</label>
+        <button id="applyMemberFilters">Apply Filters</button>
+    </div>
+
+    <div id="members"></div>
+    <div id="memberPagination"></div>
+
+    <script>
+        // Firebase Configuration (Replace with your own)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Books Logic
+        // ... (Book CRUD, Filtering, Sorting, Pagination)
+
+        // Members Logic
+        // ... (Member CRUD, Filtering, Sorting, Pagination)
+
+        // Persisting State Logic
+        // ... (Using localStorage)
+    </script>
+</body>
+</html>
